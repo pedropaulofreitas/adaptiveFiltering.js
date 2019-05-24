@@ -1,0 +1,20 @@
+
+body{
+  background-color: red;
+}
+
+.main {
+}
+
+.content{
+  background: #33ACE8;
+
+}
+
+.content:hover{
+  background-color: pink;
+  cursor:pointer;
+}
+.content:active{
+  background-color: yellow;
+}
