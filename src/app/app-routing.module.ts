@@ -4,12 +4,12 @@ import { AppSelectComponent } from './app-select/app-select.component';
 
 const routes: Routes = [
  {
-   path: 'appSelect',
+   path: '',
    component: AppSelectComponent
  },
  {
    path: 'o',
-   loadChildren:'./applications/applications.module#ApplicationsModule'
+   loadChildren:() => import('./applications/applications.module').then(m => m.ApplicationsModule)
  }
 ];
 

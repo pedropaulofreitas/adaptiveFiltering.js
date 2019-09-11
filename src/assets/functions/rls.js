@@ -12,12 +12,15 @@
 * @return {Array} array containig...
 */
 
-const math = require('mathjs')
-
+// const math = require('mathjs')
+import { create, all } from 'mathjs'
 
 
 export function RLS(desired, input, S) {
 
+
+    const config = { }
+    const math = create(all, config)
 
     //Initialization Procedure
     var nCoefficients = S.filterOrderNo + 1;
@@ -77,7 +80,36 @@ export function RLS(desired, input, S) {
         errorVectorPost[i] = math.subtract(desired[i], outputVectorPost[i]);
     }
 
-    return [outputVector, errorVector, coefficientVector, outputVectorPost, errorVectorPost];
+    var outputVectorArray = [];
+    var errorVectorArray = [];
+    var outputVectorPostArray = [];
+    var errorVectorPostArray = [];
+
+    outputVector.forEach(
+      (value, index, matrix) => {
+        outputVectorArray.push(outputVector[index].toArray()[0])
+      }
+    )
+
+    errorVector.forEach(
+      (value, index, matrix) => {
+        errorVectorArray.push(errorVector[index].toArray()[0])
+      }
+    )
+
+
+    outputVectorPost.forEach(
+      (value, index, matrix) => {
+        outputVectorPostArray.push(outputVectorPost[index].toArray()[0])
+      }
+    )
+    errorVectorPost.forEach(
+      (value, index, matrix) => {
+        errorVectorPostArray.push(errorVectorPost[index].toArray()[0])
+      }
+    )
+
+    return [outputVectorArray, errorVectorArray, coefficientVector, outputVectorPostArray, errorVectorPostArray];
 
 }
 

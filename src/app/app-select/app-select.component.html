@@ -1,52 +1,64 @@
 
+<div *ngIf="!play" class="welcome-page">
 
+    <div class="welcome-text float-center">
+      <div class="glitch"  data-text="Web Adaptive">Web Adaptive</div>
+      <div class="glitch"  data-text="Filtering">Filtering</div>
+      <div (click)="select()" class="play mt-5 glitch"  data-text="PLAY!">PLAY!</div>
 
-<div class="container bg-white">
-<div href='/appSelect' class="jumbotron bg-white main">
-
-  <div onclick="/appSelect" class="jumbotron content">
-    <div class="row">
-      <div class="col">
-        <h1 class="text-white">Signal enhancement</h1>
-      </div>
-      <div class="col">
-        <img src="../assets/pictures/sigEnh.svg" >
-      </div>
-    </div>
-  </div>
-
-  <div onclick="/appSelect" class="jumbotron content">
-    <div class="row">
-      <div class="col">
-        <h1 class="text-white">System identification</h1>
-      </div>
-      <div class="col">
-        <img src="../assets/pictures/systemId2.svg">
-      </div>
-    </div>
-  </div>
-
-  <div onclick="/appSelect" class="jumbotron content">
-    <div class="row">
-      <div class="col">
-        <h1 class="text-white">Channel equalization</h1>
-      </div>
-      <div class="col">
-        <img src="../assets/pictures/chEq.svg">
-      </div>
-    </div>
-  </div>
-
-  <div (click)="signalPrediction()" class="jumbotron content">
-    <div class="row">
-      <div class="col">
-        <h1 class="text-white">Signal prediction</h1>
-      </div>
-      <div class="col">
-        <img src="../assets/pictures/signalPred.svg">
-      </div>
-    </div>
   </div>
 
 </div>
+
+<div *ngIf="play" class="container bg-white">
+  <div href='/appSelect' class="jumbotron bg-white main">
+
+    <div onclick="/appSelect" class="jumbotron content">
+      <div class="row">
+        <div class="col">
+          <h1 class="glitchSmall text-white" data-text="Signal Enhancement">Signal Enhancement</h1>
+        </div>
+        <div class="col">
+          <img src="../assets/pictures/sigEnh.svg" >
+        </div>
+      </div>
+    </div>
+
+    <div onclick="/appSelect" class="jumbotron content">
+      <div class="row">
+        <div class="col">
+          <h1 class="glitchSmall text-white" data-text="System Identification">System Identification</h1>
+        </div>
+        <div class="col">
+          <img src="../assets/pictures/systemId2.svg">
+        </div>
+      </div>
+    </div>
+
+    <div onclick="/appSelect" class="jumbotron content">
+      <div class="row">
+        <div class="col">
+          <h1 class="glitchSmall text-white" data-text="Channel Equalization">Channel Equalization</h1>
+        </div>
+        <div class="col">
+          <img src="../assets/pictures/chEq.svg">
+        </div>
+      </div>
+    </div>
+
+    <div (click)="signalPrediction()" class="jumbotron content">
+      <div class="row">
+        <div class="col">
+          <h1 class="glitchSmall text-white" data-text="Signal Prediction">Signal Prediction</h1>
+        </div>
+        <div class="col">
+          <img src="../assets/pictures/signalPred.svg">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <FooterComponent></FooterComponent>
+
 </div>

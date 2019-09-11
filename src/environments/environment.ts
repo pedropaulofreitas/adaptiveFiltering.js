@@ -3,8 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  palette_1:{
+    color_1: '#F499FF',
+    color_2: '#C58BE8',
+    color_3: '#C5A6FF',
+    color_4: '#928BE8',
+    color_5: '#99ACFF'
+  }
+
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file
