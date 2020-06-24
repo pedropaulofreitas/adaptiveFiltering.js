@@ -1,3 +1,54 @@
-<p>
-  enhancement works!
-</p>
+
+
+<h1>Parse WAVE file</h1>
+<h5>Choose a file, then click Parse WAV</h5>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="row">
+        <button class="btn btn-primary inputButton" (click)="fileInput1.click()">
+          <span>Sinal</span>
+          <input #fileInput1 (change)="handleFiles($event, 'clean')" style="display: none;" type="file" id="clean" name="clean">      
+        </button>
+      </div>
+      <div class="row">
+
+        <button class="btn btn-primary inputButton" (click)="fileInput2.click()">
+          <span>Sinal + ruido</span>
+          <input #fileInput2 (change)="handleFiles($event, 'dirty')" style="display: none;" type="file" id="dirty" name="dirty">      
+        </button>
+      </div>
+    
+    </div>
+    <div class="col-sm">
+
+      <div class="row">
+        <button type="button" (click)="handleClick('clean')">Parse</button>
+        <button type="button" >Play</button>
+      </div>
+      <div class="row">
+        <button type="button" (click)="handleClick('dirty')">Parse</button>
+        <button type="button">Play</button>
+      </div>
+    </div>
+    <div class="col-sm">
+      <button type="button" (click)="runAdaptiveFilter()">MIX</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div  style="display: block;">
+    <canvas baseChart width="400" height="400"
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+
+      [chartType]="lineChartType"
+      [plugins]="lineChartPlugins">
+    </canvas>
+
+   
+</div>

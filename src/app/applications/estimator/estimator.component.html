@@ -1,3 +1,94 @@
-<p>
-  estimator works!
-</p>
+
+<div class="row">
+
+  <div class="card-deck">
+    <div class="card">
+      <div class="card-body">
+
+          <div class="row">
+            <button class="btn btn-primary inputButton" (click)="fileInput1.click()">
+              <span>Sinal limpo</span>
+              <input #fileInput1 (change)="getFiles($event, 'clean')" style="display: none;" type="file" id="clean" name="clean">      
+            </button>
+          </div>
+          <div class="row">
+            <button class="inputButtonNoPad" (click)="playSound()" disabled>Start</button>
+            <button class="inputButtonNoPad" (click)="stopSound()" disabled>Stop</button>
+          </div>
+
+          <div class="row">
+            <button class="btn btn-secondary inputButton" (click)="fileInput2.click()">
+              <span>Sinal distorcido</span>
+              <input #fileInput2 (change)="getFiles($event, 'dirty')" style="display: none;" type="file" id="distorted" name="distorted">      
+            </button>
+          </div>
+
+       
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Ingredientes!</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="../../assets/pictures/systemId.svg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Filtro adapatativo</small>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Result</small>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="card-deck">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Sinal limpo</h5>
+        <input style="margin-bottom: 20px;" type="file" id="clean" name="clean">        <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Entre agora com um novo sinal limpo!</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="../../assets/pictures/pedal.png" style="width: 100px;" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Aqui temos o nosso filtro que atuará como pedal digital!</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Filtro adaptativo</small>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Sinal distorcido!</h5>
+
+        
+        <p class="card-text">Se quiser salvar esse efeito para mais tarde é só clicar no botão de salvar!</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">É só dar play!</small>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
